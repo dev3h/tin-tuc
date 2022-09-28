@@ -1,5 +1,5 @@
 <div class="jumbotron">
     <div class="appeal">
+        <h2 style="text-align: center">Đây là trang tin tức</h2>
     </div>
-    <h2>Copyright @ 2020 Design by Quách Quỳnh</h2>
 </div>

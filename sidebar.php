@@ -1,28 +1,23 @@
-<?php require_once 'header.php' ?>
+<div class="col col-lg-3 sidebar">
+    <?php
+    include_once('connect.php');
+    //include_once('articles_seo_friendly.php');
+    include_once('seo_friendly.php');
+    $query = mysqli_query($conn, "SELECT * FROM posts");
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-8">
-            <?php
-            include 'connect.php';
-            if (isset($_REQUEST['url']) and $_REQUEST['url'] != "") {
-                $url = $_GET['url'];
-                $sql = "SELECT * FROM posts WHERE url = '$url' ";
-                $result = mysqli_query($conn, $sql);
-                while ($row = mysqli_fetch_array($result)) {
-                    echo "<img src='admin/photo/$row[image]' width='100%'/>";
-                    echo "<h2>" . $row['title'] . "</h2>";
-                    echo "" . $row['content'] . "";
-                }
-            }
-            ?>
-        </div>
+    if (mysqli_num_rows($query) == 0) {
+        echo "No articles found";
+    } else {
+        while ($row = mysqli_fetch_assoc($query)) { ?>
 
-        <div class="col-sm-4">
-            <?php require_once 'sidebar.php' ?>
-        </div>
-    </div>
-    <!-- /.Row-->
+            <div class="item">
+                <img src='admin/photo/<?php echo $row['image'] ?>' width='100%' />
+                <h2><?php echo $row['title'] ?></h2>
+            </div>
+    <?php }
+    }; ?>
 </div>
+
+
 
 <!-- /.Container-->
