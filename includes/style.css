@@ -5,10 +5,14 @@
 }
 body {
   font-family: Arial;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .main {
   margin: 20px 0;
+}
+.footer {
+  padding: 20px;
+  background-color: tomato;
 }
 img {
   display: block;

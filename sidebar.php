@@ -11,8 +11,10 @@
         while ($row = mysqli_fetch_assoc($query)) { ?>
 
             <div class="item">
-                <img src='admin/photo/<?php echo $row['image'] ?>' width='100%' />
-                <h2><?php echo $row['title'] ?></h2>
+                <a href="./post/<?php echo $row['url'] ?>.html">
+                    <img src='admin/photo/<?php echo $row['image'] ?>' width='100%' />
+                    <h2><?php echo $row['title'] ?></h2>
+                </a>
             </div>
     <?php }
     }; ?>

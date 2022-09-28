@@ -44,50 +44,54 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0">Quản lý bài viết</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
+                                <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                                <li class="breadcrumb-item active">Quản lý bài viết</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
-            <form action="posts_add.php" enctype="multipart/form-data" method="post" class="form">
-                <table width="600" border="1" cellspacing="5" cellpadding="5">
-                    <tr>
-                        <td width="230">Tiêu đề </td>
-                        <td width="329"><input type="text" name="title" /></td>
-                    </tr>
-                    <tr>
-                        <td>URL </td>
-                        <td><input type="text" name="url" /></td>
-                    </tr>
-                    <tr>
-                        <td>Content </td>
-                        <td><textarea name="content" id="content" placeholder="Đây là nội dung..." class="noidung" rows="10" cols="80"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>Ảnh </td>
-                        <td><input type="hidden" name="size" value="1000000">
-                            <input type="file" name="image" class="hinhanh"><br /><br />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" align="center"><input type="submit" name="btn_submit" value="Save Data" /></td>
-                    </tr>
-                </table>
-            </form>
-            <h2>Nội dung trong Database</h2>
-            <?php require 'posts_xuly.php'; ?>
+
 
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-
+                    <div class="row">
+                        <div class="col">
+                            <form action="posts_add.php" enctype="multipart/form-data" method="post" class="form">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td width="230">Tiêu đề </td>
+                                        <td><input type="text" name="title" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>URL </td>
+                                        <td><input type="text" name="url" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Content </td>
+                                        <td><textarea name="content" id="content" placeholder="Đây là nội dung..." class="noidung" rows="10" cols="80"></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ảnh </td>
+                                        <td><input type="hidden" name="size" value="1000000">
+                                            <input type="file" name="image" class="hinhanh"><br /><br />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="center"><input type="submit" name="btn_submit" value="Lưu" /></td>
+                                    </tr>
+                                </table>
+                            </form>
+                            <h2>Nội dung trong Database</h2>
+                            <?php require 'posts_xuly.php'; ?>
+                        </div>
+                    </div>
                 </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->

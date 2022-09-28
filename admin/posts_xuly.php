@@ -1,17 +1,14 @@
-<head>
-    <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-    <div class="noidung">
-        <table border="1">
+<div>
+    <table class="table table-bordered">
+        <thead>
             <tr>
-                <td>Tiêu đề:</td>
-                <td>Nội dung:</td>
-                <td>Hình ảnh:</td>
-                <td>Sửa:</td>
-                <td>Xoá:</td>
+                <th>Tiêu đề:</th>
+                <th>Hình ảnh:</th>
+                <th>Sửa:</th>
+                <th>Xoá:</th>
             </tr>
+        </thead>
+        <tbody>
             <?php
             require 'posts_connect.php';
             // Up bài viết
@@ -27,7 +24,7 @@
                 $file_size = $_FILES['image']['size'];
                 $file_tmp = $_FILES['image']['tmp_name'];
                 $file_type = $_FILES['image']['type'];
-                $path = end(explode('.', $_FILES['image']['name']));
+                $path = end(explode('.', $file_name));
                 $file_ext = strtolower($path);
 
                 $expensions = array("jpeg", "jpg", "png");
@@ -51,15 +48,15 @@
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_array($result)) {
                 echo "<tr>";
-                echo "<td><h2>" . $row['title'] . "</h2></td>";
-                echo "<td><p>" . $row['content'] . "</p></td>";
+                echo "<td><h5>" . $row['title'] . "</h5></td>";
                 echo "<td><img src='photo/" . $row['image'] . "' height=100></td>";
-                echo '<td><a href="posts_edit.php?id=' . $row['id'] . '">Edit</a></td> | <td><a href="posts_delete.php?id=' . $row['id'] . '">Delete</a></td>';
+                echo '<td><a href="posts_edit.php?id=' . $row['id'] . '">Sửa</a></td> | <td><a href="posts_delete.php?id=' . $row['id'] . '">Xóa</a></td>';
                 echo "</tr>";
             }
             ?>
-        </table>
-    </div>
+        </tbody>
+    </table>
+</div>
 </body>
 
 </html>

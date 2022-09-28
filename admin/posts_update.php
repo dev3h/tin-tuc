@@ -6,10 +6,12 @@ if (isset($_POST['update_posts'])) {
     $content = $_POST['content'];
     $image = $_POST['image'];
 
-    $sql = "UPDATE `posts` SET title='$title', '$url', content='$content', image='$image' WHERE id='$id'";
+    $sql = "UPDATE posts SET title='$title', url='$url', content='$content', image='$image' WHERE id='$id'";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<b>Record updated successfully</b>";
+        //echo "<b>Record updated successfully</b>";
+        header('Location: posts_add.php');
+        exit;
     } else {
         echo "Error updating record: " . $conn->error;
     }
