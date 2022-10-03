@@ -40,12 +40,12 @@ img {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background-color: gray;
+  background-color: lightgray;
   height: 100%;
+  overflow-y: auto;
 }
 .sidebar .item {
   padding: 20px;
-  background-color: #fff;
 }
 .sidebar img {
   width: auto;

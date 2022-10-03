@@ -32,7 +32,7 @@
                         ?>
                         <h1><?php echo $row['title']; ?></h1>
                         <p><?php echo nl2br($row['content']) ?></p>
-                        <img src="./admin/photo/<?php echo $row['image'] ?>" alt="" height=200>
+                        <img src="/tin-tuc/admin/photo/<?php echo $row['image'] ?>" alt="" height=200>
                     </div>
                 </div>
             </div>
